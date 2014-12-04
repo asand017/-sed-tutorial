@@ -1,0 +1,3 @@
+BASH TEXT MODIFIERS
+===================
+
