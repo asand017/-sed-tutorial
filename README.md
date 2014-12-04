@@ -17,8 +17,8 @@ The usual format of the sed command is as follows:
 sed *OPTIONS*... [*SCRIPT*] [*INPUTFILE*...]
 </blockquote>
 
-With *OPTIONS* referring to a passed in flag (i.e. **-n** or **-i**),
-*SCRIPT* referring to a pattern that will be used to filter the infile text,
-and *INPUTFILE* referring to the filename of the file you want to modify.
+* *OPTIONS* refers to a passed in flag (i.e. **-n** or **-i**)
+* *SCRIPT* refers to a pattern that will be used to filter the infile text
+* *INPUTFILE* refers to the filename of the file you want to modify.
 
 
