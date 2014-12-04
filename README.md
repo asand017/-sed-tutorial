@@ -2,7 +2,7 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
-CS100 
+We will be learning about text-modifying bash commands!
 
 ##1. sed
 ##2. awk
@@ -23,7 +23,21 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ...]
 
 * *OPTIONS* refers to a passed in flag (i.e. **-n** or **-i**)
 * *SCRIPT* refers to a pattern that will be used to filter the infile text
-* *INPUTFILE* refers to the filename of the file you want to modify.
+* *INPUTFILE* refers to the filename of the file you want to modify
 
+**NOTE:** unless options **-e** or **-f** are selected (options that
+specify a predetermined script to be used), *sed* will expect a 
+script to be the first non-option parameter. 
 
+<blockquote>
+sed -e test.cpp 
+</blockquote> 
+Because option/tag **-e** is passed in, we do not need to declare 
+another script.
 
+Alternatively
+<blockquote>
+sed \$ money.cpp
+</blockqoute>
+Because no flag was option/tag is passed in, we must specify our own
+script to filter the passed in file.
