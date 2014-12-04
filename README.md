@@ -29,15 +29,22 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ...]
 specify a predetermined script to be used), *sed* will expect a 
 script to be the first non-option parameter. 
 
+
 <blockquote>
-sed -e test.cpp 
+sed -e G test > result 
 </blockquote> 
 Because option/tag **-e** is passed in, we do not need to declare 
-another script.
+another script. (This particular line double-spaces each line of the 
+"test" file and copies the result into the "result" file. The "test" file
+is unchanged).
+
 
 Alternatively
 <blockquote>
-sed \$ money.cpp
-</blockqoute>
+sed 's/test/example/' test > result
+</blockquote>
 Because no flag was option/tag is passed in, we must specify our own
-script to filter the passed in file.
+script to filter the passed in file. (This line replaces each occurence of 
+the string *test* in the "test" file with the string *example* and copies
+the result into the "result" file. The "test" file remains unchanged.)
+
