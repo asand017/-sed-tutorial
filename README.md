@@ -9,4 +9,4 @@
 ##7. replace
 
 ###1. sed
-*sed* (standing for a **s** tream **ed** itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself (time you can better use working on the next assignment :P).
+*sed* (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself (time you can better use working on the next assignment :wink:).
