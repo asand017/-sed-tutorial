@@ -64,29 +64,28 @@ The **pattern** space is deleted between any two cycles; however, the
 **hold** space maintains its data throughout the process.
 
 ####Available Options for *sed*
-|----------------------|:------------------------:|
 
-|-n, --quiet, --silent | suppress automatic printing of pattern space|
+|-n, --quiet, --silent              | suppress automatic printing of pattern space
 
-|-e script, --expression=script | add the script to the commands to be executed|
+|-e script, --expression=script     | add the script to the commands to be executed
 
-|-f script-file, --file=script-file | add the contents of script-file to the commands to be executed|
+|-f script-file, --file=script-file | add the contents of script-file to the commands to be executed
 
-|-i[SUFFIX], --in-place[=SUFFIX] | edit files in place (make backup if extension supplied)|
+|-i[SUFFIX], --in-place[=SUFFIX]    | edit files in place (make backup if extension supplied)
 
-|-c, --copy | use copy instead of rename when shuffling files in -i mode (avoids change of input file ownership)|
+|-c, --copy                         | use copy instead of rename when shuffling files in -i mode (avoids change of input file ownership)
 
-|-l N, --line-length=N | specify the desired line-wrap length for the 'l' command|
+|-l N, --line-length=N              | specify the desired line-wrap length for the 'l' command
 
-|--posix | disable all GNU expressions|
+|--posix                            | disable all GNU expressions
 
-|-r, --regexp-extended | use extended regular expressions in the script|
+|-r, --regexp-extended              | use extended regular expressions in the script
 
-|-s, --separate | consider files as separate rather than as a single continous long stream|
+|-s, --separate                     | consider files as separate rather than as a single continous long stream
 
-|-u, --unbuffered | long minimal amounts of data from the input files and flush the output buffers more often|
+|-u, --unbuffered                   | long minimal amounts of data from the input files and flush the output buffers more often
 
-|--help | display this help and exit|
+|--help                             | display this help and exit
 
-|--version | output version information and exit|
+|--version                          | output version information and exit
 
