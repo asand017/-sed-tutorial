@@ -49,4 +49,5 @@ the string *test* in the "test" file with the string *example* and copies
 the result into the "result" file. The "test" file remains unchanged.)
 
 ####What is Going on Inside?
-*sed* is what is called a **stream editor**.
+*sed* works by maintaining two data buffers: the active **pattern** and 
+the auxiliary **hold** space. 
