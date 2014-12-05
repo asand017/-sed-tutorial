@@ -49,5 +49,32 @@ the string *test* in the "test" file with the string *example* and copies
 the result into the "result" file. The "test" file remains unchanged.)
 
 ####What is Going on Inside?
-*sed* works by maintaining two data buffers: the active **pattern** and 
-the auxiliary **hold** space. 
+*sed* works by maintaining two data buffers: the active **pattern**
+space and the auxiliary **hold** space. Both of these begin empty.
+
+*sed* operates by going line by line of the input file and placing it into 
+the **pattern** space, after removing any leading newline characters. 
+Once the text is in the pattern space, the desired commands are executed.
+A command will only execute if the text in the pattern space qualifies for
+the command. When the end of the infile text is reached, the pattern space
+is output to the output stream, replacing the previously removed newline.
+Another cycle begins for the next line of text in the file.
+
+The **pattern** space is deleted between any two cycles; however, the 
+**hold** space maintains its data throughout the process.
+
+####Available Options for *sed*
+--------------|-----------------
+-n, --quiet, --silent | suppress automatic printing of pattern space
+-e script, --expression=script | add the script to the commands to be executed
+-f script-file, --file=script-file | add the contents of script-file to the commands to be executed
+-i[SUFFIX], --in-place[=SUFFIX] | edit files in place (make backup if extension supplied)
+-c, --copy | use copy instead of rename when shuffling files in -i mode (avoids change of input file ownership)
+-l N, --line-length=N | specify the desired line-wrap length for the 'l' command
+--posix | disable all GNU expressions
+-r, --regexp-extended | use extended regular expressions in the script
+-s, --separate | consider files as separate rather than as a single continous long stream
+-u, --unbuffered | long minimal amounts of data from the input files and flush the output buffers more often
+--help | display this help and exit
+--version | output version information and exit
+
