@@ -29,6 +29,8 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ...]
 specify a predetermined script to be used), *sed* will expect a 
 script to be the first non-option parameter. 
 
+Here we will be primarily looking at *sed* as it is used in regular
+expressions.
 
 <blockquote>
 sed -e G test > result 
