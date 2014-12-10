@@ -57,19 +57,8 @@ Another cycle begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
-####Available Options for *sed*
-OPTIONS | DESCRIPTION
---------|------------
--n, --quiet, --silent | suppress automatic printing of pattern space
--e script, --expression=script | add the script to the commands to be executed
--f script-file, --file=script-file | add the contents of script-file to the commands to be executed
--i[SUFFIX], --in-place[=SUFFIX] | edit files in place (make backup if extension supplied)
--c, --copy | use copy instead of rename when shuffling files in -i mode (avoids change of input file ownership)
--l N, --line-length=N | specify the desired line-wrap length for the 'l' command
---posix | disable all GNU expressions
--r, --regexp-extended | use extended regular expressions in the script
--s, --separate | consider files as separate rather than as a single continous long stream
--u, --unbuffered | long minimal amounts of data from the input files and flush the output buffers more often
---help | display this help and exit
---version | output version information and exit
+####When to use *sed*
+The *sed* command is hilariously underused by most programmers at its full potential. However, this does not mean any one 
+programmer should refrain from using the simpler aspects of *sed*.
 
+One of these "simpler" uses of *sed* is **subsitution**.
