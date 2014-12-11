@@ -35,6 +35,23 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ... ]
 
 * *INPUTFILE* refers to the filename of the file you want to modify
 
+Practically, you will come across sed in more than one specific form.
+
+For example: 
+<blockquote>
+sed 's/cat/dog/' testfile
+</blockquote> 
+
+does the same thing as 
+<blockquote>
+sed s/cat/dog/ testfile
+</blockquote>
+
+which does the same thing as
+<blockquote>
+cat testfile | sed 's/cat/dog/'
+</blockquote>
+
 ####When To Use it
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
@@ -52,8 +69,3 @@ A simple example of *sed* substitution in action:
 <blockquote>
 echo dog | sed 's/dog/cat/'
 </blockquote>
-**NOTE:** Unlike in previous declaration of *sed*, *sed* can have input piped to it instead of an input file.
-
-
-
-
