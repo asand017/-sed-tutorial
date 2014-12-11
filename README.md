@@ -72,7 +72,7 @@ desired pattern.
 
 
 
-####When To Use it
+####When Can We Do With it?
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
 be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
@@ -91,7 +91,11 @@ echo dog | sed 's/dog/cat/'
 </blockquote>
 
 There are four parts to the substitution command:
+
 1. s -> Substitute
+
 2. /.../.../ -> Delimiter
+
 3. dog -> Regular Expression Pattern/Search Pattern
+
 4. cat -> Replacement String
