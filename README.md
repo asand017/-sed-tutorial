@@ -1,10 +1,11 @@
-#SED TEXT MODIFIERS
+#SED TEXT MODIFIER
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
 We will be learning about *sed* and the power it holds!
 
-###sed
+####What is *sed*?
+
 *sed* (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself (time you can better use working on the next 100  assignment :wink:).
 
 ####What is Going on Inside?
@@ -22,8 +23,7 @@ Another cycle begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
-####So what does it look like?
-
+####So What Does it Look Like?
 The format of the *sed* command is as follows:
 <blockquote>
 sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ... ]
@@ -35,18 +35,17 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ... ]
 
 * *INPUTFILE* refers to the filename of the file you want to modify
 
-The typical appearence of a *sed* command
+####When To Use it
+The *sed* command is hilariously underused by most programmers for purposes outside of string 
+substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
+be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
+a program that automatically edits a file, *sed* would be their best friend. Unfortuneatly for most
+programmers, the simplicity of *sed* is overshadowed by its lengthy documentation.
 
-####When to use *sed*
-The *sed* command is hilariously underused by most programmers at its full potential. 
+The most widely used and most popular use of *sed* is **subsitution**.
 
-However, this does not mean any one programmer should refrain from using the simpler aspects 
-of *sed*.
-
-The most popular use of the *sed* command is for **subsitution**.
-
-#####substitution
-While *sed* has more commands than substitution, the average programmer will only ever use the substitution command: *s*.
+#####Substitution
+The bread and butter of *sed*, the **s** command (s for substitution) 
 
 A simple example of *sed* substitution in action: 
 
