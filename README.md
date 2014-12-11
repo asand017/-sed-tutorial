@@ -26,14 +26,14 @@ The **pattern** space is deleted between any two cycles; however, the
 ####So What Does it Look Like?
 The format of the *sed* command is as follows:
 <blockquote>
-sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ... ]
+sed *options* ... [ *script* ] [ *inputfile* ... ]
 </blockquote>
 
-* *OPTIONS* refers to a passed in flag (i.e. **-n** or **-i**)
+* *options* refers to a passed in flag (i.e. **-n** or **-i**)
 
-* *SCRIPT* refers to a pattern that will be used to filter the infile text
+* *script* refers to a pattern that will be used to filter the infile text
 
-* *INPUTFILE* refers to the filename of the file you want to modify
+* *inputfile* refers to the filename of the file you want to modify
 
 Practically, *sed* is somewhat flexible in how it can be called.
 
@@ -59,6 +59,8 @@ cat testfile | sed s/cat/dog/
 
 **NOTE:** *sed* requires some sort of input to function. This input can come from a pipe or 
 it can be passed in as shown in the *sed* declaration. 
+
+Ultimately, as long as *sed* has everything it needs to 
 
 ####When To Use it
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
