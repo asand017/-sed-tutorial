@@ -92,10 +92,16 @@ echo dog | sed 's/dog/cat/'
 
 There are four parts to the substitution command:
 
-1. s -> Substitute
+1. "s"  Substitute
 
-2. /.../.../ -> Delimiter
+2. "/.../.../" -> Delimiter
 
-3. dog -> Regular Expression Pattern/Search Pattern
+3. "dog" -> Regular Expression Pattern/Search Pattern
 
-4. cat -> Replacement String
+4. "cat" -> Replacement String
+
+
+
+The string you want to search for (i.e. "dog" the search pattern) is on the left side of the 
+delimiter sequence. The string you want to replace the search pattern with (i.e. "cat") 
+goes on the right side. 
