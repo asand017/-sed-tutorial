@@ -35,7 +35,7 @@ sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ... ]
 
 * *INPUTFILE* refers to the filename of the file you want to modify
 
-Practically, you will come across sed in more than one specific form.
+Practically, *sed* is somewhat flexible in how it can be called.
 
 For example: 
 <blockquote>
@@ -51,6 +51,14 @@ which does the same thing as
 <blockquote>
 cat testfile | sed 's/cat/dog/'
 </blockquote>
+
+which does the same thing as 
+<blockquote>
+cat testfile | sed s/cat/dog/
+</blockquote>
+
+**NOTE:** *sed* requires some sort of input to function. This input can come from a pipe or 
+it can be passed in as shown in the *sed* declaration. 
 
 ####When To Use it
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
