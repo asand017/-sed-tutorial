@@ -106,11 +106,21 @@ delimiter.
 The character after **s** is called a delimiter. The delimiters are needed to parse the command, to
 seperate the substitution command from the search pattern and seperate the replacement string from
 previous part. In the case of the above example, the delimiter is a slash, but the delimiter can 
-be any character you want as long as there are three of them.
+be any character you want as long as there are three of them:
 
 <blockquote>
-echo dog | sed 's_dog_cat_'      #This produces the same result as the previous example.
+echo dog | sed 's_dog_cat_'    
 </blockquote>
+
+<blockquote>
+echo dog | sed 's:dog:cat:'
+</blockquote>
+
+<blockquote>
+echo dog | sed 'sxdogxcatx'
+</blockquote>
+
+Each of these instances will have the same output as the original example.
 
 A missing delimiter while result in a "Unterminated 's' command" error.
 
