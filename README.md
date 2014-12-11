@@ -22,6 +22,22 @@ Another cycle begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
+####When to use *sed*
+The *sed* command is hilariously underused by most programmers at its full potential. However, this does not mean any one 
+programmer should refrain from using the simpler aspects of *sed*.
+
+The most popular use of the *sed* command is for **subsitution**.
+
+#####substitution
+While *sed* has more commands than substitution, the average programmer will only ever use the substitution command: *s*.
+
+A simple example of *sed* in action: 
+
+<blockquote>
+echo dog | sed 's/dog/cat/'
+</blockquote>
+**NOTE:** Unlike in previous examples, *sed* can have input piped to it instead of modifying a passed in file.
+
 The usual format of the sed command is as follows:
 <blockquote>
 sed *OPTIONS* ... [ *SCRIPT* ] [ *INPUTFILE* ...]
@@ -57,20 +73,4 @@ script to filter the passed in file (in this case, our script is 's/test/example
 the string *test* in the "test" file with the string *example* and copies
 the result into the "result" file. The "test" file remains unchanged.)
 
-
-####When to use *sed*
-The *sed* command is hilariously underused by most programmers at its full potential. However, this does not mean any one 
-programmer should refrain from using the simpler aspects of *sed*.
-
-The most popular use of the *sed* command is for **subsitution**.
-
-#####substitution
-While *sed* has more commands than substitution, the average programmer will only ever use the substitution command: *s*.
-
-A simple example of *sed* in action: 
-
-<blockquote>
-echo dog | sed 's/dog/cat/'
-</blockquote>
-**NOTE:** Unlike in previous examples, *sed* can have input piped to it instead of modifying a passed in file.
 
