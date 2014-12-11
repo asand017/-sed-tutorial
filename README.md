@@ -57,6 +57,8 @@ which does the same thing as
 cat testfile | sed s/cat/dog/
 </blockquote>
 
+which replaces the first occurence of "cat" on each line of the input source with "dog".
+
 **NOTE:** *sed* requires some sort of input to function. This input can come from a pipe or 
 it can be passed in as shown in the *sed* declaration. 
 
@@ -64,7 +66,11 @@ Alternativly, you can call sed without input
 <blockquote>
 sed 's/cat/dog/'
 </blockquote>
-which will cause *sed* to wait for input from stdin. 
+which will cause *sed* to wait for input from stdin and modify the input that matches the
+desired pattern.
+
+
+
 
 ####When To Use it
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
@@ -83,3 +89,9 @@ A simple example of *sed* substitution in action:
 <blockquote>
 echo dog | sed 's/dog/cat/'
 </blockquote>
+
+There are four parts to the substitution command:
+1. s -> Substitute
+2. /.../.../ -> Delimiter
+3. dog -> Regular Expression Pattern/Search Pattern
+4. cat -> Replacement String
