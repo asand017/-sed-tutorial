@@ -100,11 +100,11 @@ There are four parts to the substitution command:
 
 4. "cat" -> Replacement String
 
-The command character (in this case **s** for substitution) must go on the left side of the first
+**1.** The command character (in this case **s** for substitution) must go on the left side of the first
 delimiter.
 
-The character after **s** is called a delimiter. The delimiters are needed to parse the command, to
-seperate the substitution command from the search pattern and seperate the replacement string from
+**2.** The character after **s** is called a delimiter. The delimiters are needed to parse the
+command, to seperate the substitution command from the search pattern and seperate the replacement string from
 previous part. In the case of the above example, the delimiter is a slash, but the delimiter can 
 be any character you want as long as there are three of them:
 
@@ -130,6 +130,8 @@ Each of these instances will have the same output as the original example.
 
 A missing delimiter while result in a "Unterminated 's' command" error.
 
-The string you want to search for (i.e. "dog" the search pattern) is on the left side of the 
-delimiter sequence. The string you want to replace the search pattern with (i.e. "cat") 
-goes on the right side. 
+**3.** The string you want to search for (i.e. "dog" the search pattern) is on the left side of the delimiter sequence. 
+
+**4.** The string you want to replace the search pattern with (i.e. "cat") goes on the right side.
+
+ 
