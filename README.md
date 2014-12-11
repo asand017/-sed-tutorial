@@ -112,13 +112,19 @@ be any character you want as long as there are three of them:
 echo dog | sed 's_dog_cat_'    
 </blockquote>
 
+is equivalent to
+
 <blockquote>
-echo dog | sed 's:dog:cat:'
+echo dog | sed 's^dog^cat:'
 </blockquote>
+
+is equivalent to
 
 <blockquote>
 echo dog | sed 'sxdogxcatx'
 </blockquote>
+
+and so forth.
 
 Each of these instances will have the same output as the original example.
 
