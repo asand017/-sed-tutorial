@@ -134,4 +134,4 @@ A missing delimiter while result in a "Unterminated 's' command" error.
 
 **4.** The string you want to replace the search pattern with (i.e. "cat") goes on the right side.
 
-Let&rsquos look at a real world example of the substitution. 
+Now let&#39;s look at a real world example of substitution. 
