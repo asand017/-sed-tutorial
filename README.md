@@ -114,15 +114,15 @@ echo dog | sed 's_dog_cat_'
 
 is equivalent to
 
-<blockquote>
+```
 echo dog | sed 's^dog^cat:'
-</blockquote>
+```
 
 is equivalent to
 
-'''
+```
 echo dog | sed 'sxdogxcatx'
-'''
+```
 
 and so forth.
 
