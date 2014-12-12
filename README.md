@@ -6,7 +6,7 @@ We will be learning about *sed* and the power it holds!
 
 ####What is *sed*?
 
-*sed* (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself (time you can better use working on the next 100  assignment :wink:).
+*sed* (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
 ####What is Going on Inside?
 *sed* works by maintaining two data buffers: the active **pattern**
@@ -70,9 +70,6 @@ sed 's/cat/dog/'
 which will cause *sed* to wait for input from stdin and modify the input that matches the
 desired pattern.
 
-
-
-
 ####What Can We Do With it?
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
@@ -106,7 +103,7 @@ delimiter.
 
 **2.** The character after **s** is called a delimiter. The delimiters are needed to parse the
 command, to seperate the substitution command from the search pattern and seperate the replacement string from
-previous part. In the case of the above example, the delimiter is a slash, but the delimiter can 
+the search pattern. In the case of the above example, the delimiter is a slash, but the delimiter can 
 be any character you want as long as there are three of them:
 
 ```
@@ -135,4 +132,9 @@ A missing delimiter while result in a "Unterminated 's' command" error.
 
 **4.** The string you want to replace the search pattern with (i.e. "cat") goes on the right side.
 
-Now let&#39;s look at a real world example of substitution. 
+Now let&#39;s look at a real world use of substitution.
+
+Riot Games is sending out a mass email to all of its employees to inform them of an
+impending overhaul to the company infrastructure. Riot sends out all of these emails
+through a script that takes in a separate text file listing every employee email
+address and executes a series of commands that sends the same message to each employee.
