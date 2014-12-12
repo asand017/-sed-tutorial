@@ -120,9 +120,9 @@ echo dog | sed 's^dog^cat:'
 
 is equivalent to
 
-<blockquote>
+'''
 echo dog | sed 'sxdogxcatx'
-</blockquote>
+'''
 
 and so forth.
 
