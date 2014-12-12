@@ -39,32 +39,32 @@ Practically, *sed* is somewhat flexible in how it can be called.
 
 For example: 
 ```
-sed 's/cat/dog/' testfile
+sed 's/aol.com/gmail.com/' testfile
 ```
 
 does the same thing as 
-<blockquote>
-sed s/cat/dog/ testfile
-</blockquote>
+```
+sed s/aol.com/gmail.com/ testfile
+```
 
 which does the same thing as
 ```
-cat testfile | sed 's/cat/dog/'
+cat testfile | sed 's/aol.com/gmail.com/'
 ```
 
 which does the same thing as 
 ```
-cat testfile | sed s/cat/dog/
+cat testfile | sed s/aol.com/gmail.com/
 ```
 
-which replaces the first occurence of "cat" on each line of the input source with "dog".
+which replaces the first occurence of "aol.com" on each line of the input source with "gmail.com".
 
 **NOTE:** *sed* requires some sort of input to function. This input can come from a pipe or 
 it can be passed in as shown in the *sed* declaration. 
 
 Alternativly, you can call sed without input
 ```
-sed 's/cat/dog/'
+sed 's/aol.com/gmail.com/'
 ```
 
 which will cause *sed* to wait for input from stdin and modify the input that matches the
@@ -85,7 +85,7 @@ The bread and butter of *sed*, the **s** command (s for substitution)
 A simple example of *sed* substitution in action: 
 
 ```
-echo dog | sed 's/dog/cat/'
+echo aol.com | sed 's/aol.com/gmail.com/'
 ```
 
 There are four parts to the substitution command:
@@ -94,9 +94,9 @@ There are four parts to the substitution command:
 
 2. **/.../.../** &#8594; Delimiter
 
-3. **dog** &#8594; Regular Expression Pattern/Search Pattern
+3. **aol.com** &#8594; Regular Expression Pattern/Search Pattern
 
-4. **cat** &#8594; Replacement String
+4. **gmail.com** &#8594; Replacement String
 
 **1.** The command character (in this case **s** for substitution) must go on the left side of the first
 delimiter.
@@ -107,19 +107,19 @@ the search pattern. In the case of the above example, the delimiter is a slash, 
 be any character you want as long as there are three of them:
 
 ```
-echo dog | sed 's_dog_cat_'    
+echo aol.com | sed 's_aol.com_gmail.com_'    
 ```
 
 is equivalent to
 
 ```
-echo dog | sed 's^dog^cat:'
+echo aol.com | sed 's^aol.com^gmail.com^'
 ```
 
 is equivalent to
 
 ```
-echo dog | sed 'sxdogxcatx'
+echo aol.com | sed 'sxaol.comxgmail.comx'
 ```
 
 and so forth.
@@ -128,9 +128,9 @@ Each of these instances will have the same output as the original example.
 
 A missing delimiter while result in a "Unterminated 's' command" error.
 
-**3.** The string you want to search for (i.e. "dog" the search pattern) is on the left side of the delimiter sequence. 
+**3.** The string you want to search for (i.e. "aol.com" the search pattern) is on the left side of the delimiter sequence. 
 
-**4.** The string you want to replace the search pattern with (i.e. "cat") goes on the right side.
+**4.** The string you want to replace the search pattern with (i.e. "gmail.com") goes on the right side.
 
 Now let&#39;s look at a real world use of substitution.
 
