@@ -72,7 +72,7 @@ desired pattern.
 
 
 
-####When Can We Do With it?
+####What Can We Do With it?
 The *sed* command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
 be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
@@ -134,4 +134,4 @@ A missing delimiter while result in a "Unterminated 's' command" error.
 
 **4.** The string you want to replace the search pattern with (i.e. "cat") goes on the right side.
 
- 
+Let&rsquos look at a real world example of the substitution. 
