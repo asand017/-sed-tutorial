@@ -25,9 +25,9 @@ The **pattern** space is deleted between any two cycles; however, the
 
 ####So What Does it Look Like?
 The format of the *sed* command is as follows:
-<blockquote>
+```
 sed options ... [ script ] [ inputfile ... ]
-</blockquote>
+```
 
 * *options* refers to a passed in flag (i.e. **-n** or **-i**)
 
@@ -38,9 +38,9 @@ sed options ... [ script ] [ inputfile ... ]
 Practically, *sed* is somewhat flexible in how it can be called.
 
 For example: 
-<blockquote>
+```
 sed 's/cat/dog/' testfile
-</blockquote> 
+```
 
 does the same thing as 
 <blockquote>
@@ -48,14 +48,14 @@ sed s/cat/dog/ testfile
 </blockquote>
 
 which does the same thing as
-<blockquote>
+```
 cat testfile | sed 's/cat/dog/'
-</blockquote>
+```
 
 which does the same thing as 
-<blockquote>
+```
 cat testfile | sed s/cat/dog/
-</blockquote>
+```
 
 which replaces the first occurence of "cat" on each line of the input source with "dog".
 
@@ -63,9 +63,10 @@ which replaces the first occurence of "cat" on each line of the input source wit
 it can be passed in as shown in the *sed* declaration. 
 
 Alternativly, you can call sed without input
-<blockquote>
+```
 sed 's/cat/dog/'
-</blockquote>
+```
+
 which will cause *sed* to wait for input from stdin and modify the input that matches the
 desired pattern.
 
@@ -86,9 +87,9 @@ The bread and butter of *sed*, the **s** command (s for substitution)
 
 A simple example of *sed* substitution in action: 
 
-<blockquote>
+```
 echo dog | sed 's/dog/cat/'
-</blockquote>
+```
 
 There are four parts to the substitution command:
 
@@ -108,9 +109,9 @@ command, to seperate the substitution command from the search pattern and sepera
 previous part. In the case of the above example, the delimiter is a slash, but the delimiter can 
 be any character you want as long as there are three of them:
 
-<blockquote>
+```
 echo dog | sed 's_dog_cat_'    
-</blockquote>
+```
 
 is equivalent to
 
