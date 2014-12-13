@@ -2,6 +2,8 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
+##Top <a name="Top"></a>Top
+
 ###1. [What is *sed*?](#What is *sed*?)
 
 ###2. [How Does it Work?](#How Does it Work?)
@@ -18,6 +20,8 @@ We will be learning about the `sed` bash command and the power it holds!
 
 `sed` (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
+#### [Top](#Top)
+
 ### <a name="How Does it Work?"></a>How Does it Work?
 `sed` works by maintaining two data buffers: the active **pattern**
 space and the auxiliary **hold** space. Both of these begin empty.
@@ -32,6 +36,8 @@ Another cycle begins for the next line of text in the file.
 
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
+
+#### [Top](#Top)
 
 ### <a name="What Does it Look Like?"></a>What Does it Look Like?
 The format of the `sed` command is as follows:
@@ -80,6 +86,8 @@ sed 's/aol.com/gmail.com/'
 which will cause `sed` to wait for input from stdin and modify the input that matches the
 desired pattern.
 
+#### [Top](#Top)
+
 ### <a name="What Can We Do With it?"></a>What Can We Do With it?
 The `sed` command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, `sed` can have many more uses. For instance, `sed` can 
@@ -88,7 +96,7 @@ a program that automatically edits a file, `sed` would be their best friend. Unf
 programmers, the simplicity of *sed* is overshadowed by its lengthy documentation.
 
 ####1. Substitution
-####2. Emulate Other Commands
+####2. Emulation
 
 The most widely used and most popular use of `sed` is **subsitution**.
 
@@ -159,6 +167,6 @@ sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm n
 changes, you must use output redirection to copy the modified input file into a new file and then put copy the contents of the new file back into the old input file. Lastly, you 
 would delete the file you created to do the file transformation (it is always considered good prectice to delete files you don&#39;t need).  
 
-
+#### [Top](#Top)
 
 ### <a name="Why Should We Ever Use *sed*?"></a>Why Should We Ever Use *sed*?
