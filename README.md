@@ -69,7 +69,7 @@ which replaces the first occurence of "aol.com" on each line of the input source
 **NOTE:** `sed` can be written with or without single quotations. Although, it is better practice to always include them. It makes seeing which instructions belong to `sed`
 and which instructions belong to another command easier.
 
-Alternativly, you can accomplish the same goal by piping the contents of the old email list to `sed`: 
+Alternatively, you can accomplish the same goal by piping the contents of the old email list to `sed`: 
 ```
 cat oldlist | sed 's/aol.com/gmail.com/' > newlist
 ```
@@ -162,6 +162,17 @@ sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm n
 changes, you must use output redirection to copy the modified input file into a new file and then put copy the contents of the new file back into the old input file. Lastly, you 
 would delete the file you created to do the file transformation (it is always considered good prectice to delete files you don&#39;t need).  
 
+
+
 #### [Top](#Top)
 
 ### <a name="Why Should We Ever Use *sed*?"></a>Why Should We Ever Use *sed*?
+A good programmer is defined by how the spend time, how much they value time, and how efficiently they use their time. Good programmers don&#39;t waste time on tedious coding that
+a program or a command can accomplish in a fraction of the time he or she would need to do it by hand. `sed` and commands like `sed` exist to encourage a "good programmer" mentality.
+
+So when you find yourself in a position where you&#39;ve forgotten to put a set of () around a recurring conditional statenment in a file or you want to change
+the name of a project in your project README, you&#39;ll have a choice to make: be a bad programmer and spend valuable time making the corrections or be a good 
+programmer and have `sed` do it for you.
+
+#### [Top](#Top)
+
