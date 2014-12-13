@@ -2,6 +2,8 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
+We will be learning about the `sed` bash command and the power it holds!
+
 ## <a name="Top"></a>Top
 
 ###1. [What is *sed*?](#What is *sed*?)
@@ -13,8 +15,6 @@ Welcome to cs100! :smiley: :trollface: :fearful:
 ###4. [What Can We Do With it?](#What Can We Do With it?)
 
 ###5. [Why Should We Ever Use *sed*?](#Why Should We Ever Use *sed*?)
-
-We will be learning about the `sed` bash command and the power it holds!
 
 ### <a name="What is *sed*?"></a>What is *sed*?
 
@@ -53,47 +53,42 @@ sed options ... [ script ] [ inputfile ... ]
 
 In practice, `sed` is not completely strict in how it can be called.
 
-For example: 
+For example, say you had a file containing a list of subscriber email addresses and you accidently got the domain names wrong. One way you could quickly and painlessly resolve this 
+dilemma would be to pass your old email list into the `sed` command: 
 ```
-sed 's/aol.com/gmail.com/' testfile
-```
-
-does the same thing as 
-```
-sed s/aol.com/gmail.com/ testfile
+sed 's/aol.com/gmail.com/' oldlist > newlist
 ```
 
-which does the same thing as
+or
 ```
-cat testfile | sed 's/aol.com/gmail.com/'
-```
-
-which does the same thing as 
-```
-cat testfile | sed s/aol.com/gmail.com/
+sed s/aol.com/gmail.com/ oldlist > newlist
 ```
 
 which replaces the first occurence of "aol.com" on each line of the input source with "gmail.com".
 
-**NOTE:** `sed` requires some sort of input to pass over. This input can come from a pipe or 
-it can be passed in as shown in the `sed` declaration. 
+**NOTE:** `sed` can be written with or without single quotations. Although, it is better practice to always include them. It makes seeing which instructions belong to `sed`
+and which instructions belong to another command easier.
 
-Alternativly, you can call sed without input
+Alternativly, you can accomplish the same goal by piping the contents of the old email list to `sed`: 
+```
+cat oldlist | sed 's/aol.com/gmail.com/' > newlist
+```
+
+If `sed` is called without a source of input:
 ```
 sed 's/aol.com/gmail.com/'
 ```
 
-which will cause `sed` to wait for input from stdin and modify the input that matches the
-desired pattern.
+`sed` will become "hungup" and will wait for input from stdin (manually entered input from the user), which is not very useful on its own.
 
 #### [Top](#Top)
 
 ### <a name="What Can We Do With it?"></a>What Can We Do With it?
-The `sed` command is hilariously underused by most programmers for purposes outside of string 
-substituion. With a little imagination, `sed` can have many more uses. For instance, `sed` can 
-be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
-a program that automatically edits a file, `sed` would be their best friend. Unfortuneatly for most
-programmers, the simplicity of *sed* is overshadowed by its lengthy documentation.
+Despite what the average programmer might suggest, `sed` can be used for more than just simple text transformations. With regular expressions, `sed` can execute much more
+complicated transformations that have virtually no restricitons. You can build an entire program using only `sed` (i.e. a script that capitalizes all the vowels in a text file).
+You can also make `sed` behave like other commands (i.e. `grep`, `head`, and `tail`). 
+
+For the purposes of cs100, we will confine the scope of our usage of `sed` to the following 2 categories:
 
 ####1. Substitution
 ####2. Emulation
