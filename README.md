@@ -35,7 +35,7 @@ sed options ... [ script ] [ inputfile ... ]
 
 * *inputfile* refers to the filename of the file you want to modify
 
-In practice, `sed` is somewhat completely strict in how it can be called.
+In practice, `sed` is not completely strict in how it can be called.
 
 For example: 
 ```
@@ -141,6 +141,10 @@ you can complete this task in a matter of seconds as opposed to ten minutes you 
 ```
 sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm newREADME.md
 ```
+
+**NOTE:** It is important to keep in mind that `sed` will not replace the text in the input file on its own. `sed` will print the modified text to stdout. So inorder to capture the 
+changes, you must use output redirection to copy the modified input file into a new file and then put copy the contents of the new file back into the old input file. Lastly, you 
+would delete the file you created to do the file transformation (it is always considered good prectice to delete files you don&#39;t need).  
 
 
 
