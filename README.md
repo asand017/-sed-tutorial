@@ -4,13 +4,13 @@ Welcome to cs100! :smiley: :trollface: :fearful:
 
 ###1. [What is *sed*?](#What is *sed*?)
 
-###2. How Does it Work?
+###2. [How Does it Work?](#How Does it Work?)
 
-###3. What Does it Look Like?
+###3. [What Does it Look Like?](#What Does it Look Like?)
 
-###4. What Can We Do With it?
+###4. [What Can We Do With it?](#What Can We Do With it?)
 
-###5. Why Should We Ever Use it?
+###5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
 
 We will be learning about the `sed` bash command and the power it holds!
 
@@ -18,7 +18,7 @@ We will be learning about the `sed` bash command and the power it holds!
 
 `sed` (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
-###How Does it Work?
+### <a name="How Does it Work?"></a>How Does it Work?
 `sed` works by maintaining two data buffers: the active **pattern**
 space and the auxiliary **hold** space. Both of these begin empty.
 
@@ -33,7 +33,7 @@ Another cycle begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
-###What Does it Look Like?
+### <a name="What Does it Look Like?"></a>What Does it Look Like?
 The format of the `sed` command is as follows:
 ```
 sed options ... [ script ] [ inputfile ... ]
@@ -80,7 +80,7 @@ sed 's/aol.com/gmail.com/'
 which will cause `sed` to wait for input from stdin and modify the input that matches the
 desired pattern.
 
-###What Can We Do With it?
+### <a name="What Can We Do With it?"></a>What Can We Do With it?
 The `sed` command is hilariously underused by most programmers for purposes outside of string 
 substituion. With a little imagination, `sed` can have many more uses. For instance, `sed` can 
 be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
@@ -161,4 +161,4 @@ would delete the file you created to do the file transformation (it is always co
 
 
 
-###Why Should We Ever Use *sed*?
+### <a name="Why Should We Ever Use *sed*?"></a>Why Should We Ever Use *sed*?
