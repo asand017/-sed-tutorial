@@ -2,7 +2,7 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
-##Top <a name="Top"></a>Top
+## <a name="Top"></a>Top
 
 ###1. [What is *sed*?](#What is *sed*?)
 
