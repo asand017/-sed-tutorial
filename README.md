@@ -14,7 +14,7 @@ Welcome to cs100! :smiley: :trollface: :fearful:
 
 We will be learning about the `sed` bash command and the power it holds!
 
-### <a name="What is *sed*?"></a>
+### <a name="What is *sed*?"></a>What is *sed*?
 
 `sed` (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
