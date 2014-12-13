@@ -10,7 +10,7 @@ Welcome to cs100! :smiley: :trollface: :fearful:
 
 ###4. [What Can We Do With it?](#What Can We Do With it?)
 
-###5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
+###5. [Why Should We Ever Use *sed*?](#Why Should We Ever Use *sed*?)
 
 We will be learning about the `sed` bash command and the power it holds!
 
