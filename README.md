@@ -2,17 +2,17 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
-We will be learning about *sed* and the power it holds!
+We will be learning about the `sed` bash command and the power it holds!
 
 ####What is *sed*?
 
 `sed` (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
-####What is Going on Inside?
+####How Does it Work?
 `sed` works by maintaining two data buffers: the active **pattern**
 space and the auxiliary **hold** space. Both of these begin empty.
 
-`sed` operates by going line by line of the input file and placing it into 
+`sed` operates by going line by line of an input file and placing it into 
 the **pattern** space, after removing any leading newline characters. 
 Once the text is in the pattern space, the desired commands are executed.
 A command will only execute if the text in the pattern space qualifies for
@@ -23,7 +23,7 @@ Another cycle begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
-####So What Does it Look Like?
+####What Does it Look Like?
 The format of the `sed` command is as follows:
 ```
 sed options ... [ script ] [ inputfile ... ]
@@ -141,3 +141,7 @@ you can complete this task in a matter of seconds as opposed to ten minutes you 
 ```
 sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm newREADME.md
 ```
+
+
+
+####Why Should We Ever Use *sed*?
