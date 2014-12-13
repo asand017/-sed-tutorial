@@ -6,13 +6,13 @@ We will be learning about *sed* and the power it holds!
 
 ####What is *sed*?
 
-*sed* (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
+`sed` (standing for a {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
 ####What is Going on Inside?
-*sed* works by maintaining two data buffers: the active **pattern**
+`sed` works by maintaining two data buffers: the active **pattern**
 space and the auxiliary **hold** space. Both of these begin empty.
 
-*sed* operates by going line by line of the input file and placing it into 
+`sed` operates by going line by line of the input file and placing it into 
 the **pattern** space, after removing any leading newline characters. 
 Once the text is in the pattern space, the desired commands are executed.
 A command will only execute if the text in the pattern space qualifies for
@@ -24,7 +24,7 @@ The **pattern** space is deleted between any two cycles; however, the
 **hold** space maintains its data throughout the process.
 
 ####So What Does it Look Like?
-The format of the *sed* command is as follows:
+The format of the `sed` command is as follows:
 ```
 sed options ... [ script ] [ inputfile ... ]
 ```
@@ -35,7 +35,7 @@ sed options ... [ script ] [ inputfile ... ]
 
 * *inputfile* refers to the filename of the file you want to modify
 
-Practically, *sed* is somewhat flexible in how it can be called.
+In practice, `sed` is somewhat completely strict in how it can be called.
 
 For example: 
 ```
@@ -59,30 +59,30 @@ cat testfile | sed s/aol.com/gmail.com/
 
 which replaces the first occurence of "aol.com" on each line of the input source with "gmail.com".
 
-**NOTE:** *sed* requires some sort of input to function. This input can come from a pipe or 
-it can be passed in as shown in the *sed* declaration. 
+**NOTE:** `sed` requires some sort of input to pass over. This input can come from a pipe or 
+it can be passed in as shown in the `sed` declaration. 
 
 Alternativly, you can call sed without input
 ```
 sed 's/aol.com/gmail.com/'
 ```
 
-which will cause *sed* to wait for input from stdin and modify the input that matches the
+which will cause `sed` to wait for input from stdin and modify the input that matches the
 desired pattern.
 
 ####What Can We Do With it?
-The *sed* command is hilariously underused by most programmers for purposes outside of string 
-substituion. With a little imagination, *sed* can have many more uses. For instance, *sed* can 
+The `sed` command is hilariously underused by most programmers for purposes outside of string 
+substituion. With a little imagination, `sed` can have many more uses. For instance, `sed` can 
 be used to emulate other commands such as *grep* and *head*. If someone wanted to write a 
-a program that automatically edits a file, *sed* would be their best friend. Unfortuneatly for most
+a program that automatically edits a file, `sed` would be their best friend. Unfortuneatly for most
 programmers, the simplicity of *sed* is overshadowed by its lengthy documentation.
 
-The most widely used and most popular use of *sed* is **subsitution**.
+The most widely used and most popular use of `sed` is **subsitution**.
 
 #####Substitution
-The bread and butter of *sed*, the **s** command (s for substitution) 
+The bread and butter of `sed`, the **s** command (s for substitution) 
 
-A simple example of *sed* substitution in action: 
+A simple example of `sed` substitution in action: 
 
 ```
 echo aol.com | sed 's/aol.com/gmail.com/'
@@ -132,9 +132,12 @@ A missing delimiter while result in a "Unterminated 's' command" error.
 
 **4.** The string you want to replace the search pattern with (i.e. "gmail.com") goes on the right side.
 
-Now let&#39;s look at a real world use of substitution.
+Now let&#39;s look at a few real world instance where substitution would be useful.
 
-Riot Games is sending out a mass email to all of its employees to inform them of an
-impending overhaul to the company infrastructure. Riot sends out all of these emails
-through a script that takes in a separate text file listing every employee email
-address and executes a series of commands that sends the same message to each employee.
+You are working on a project that you completed a version of in 2012. Upon completing your coding you remember that your README file describing what your project does has the wrong 
+version date listed in it. A bad programmer would waste their time manually changing each incorrect year number in their README, but you aren&#39;t a bad programmer. You know that
+you can complete this task in a matter of seconds as opposed to ten minutes you could be using doing something more productive. All you&#39;ll type is a one line into your terminal:
+
+```
+sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm newREADME.md
+```
