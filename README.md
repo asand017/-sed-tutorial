@@ -45,7 +45,7 @@ The format of the `sed` command is as follows:
 sed options ... [ script ] [ inputfile ... ]
 ```
 
-* *options* refers to a passed in flag (i.e. **-n** or **-i**)
+* *options* refers to a passed in flag (i.e. **-n** or **-i**) 
 
 * *script* refers to a pattern that will be used to filter the infile text
 
@@ -90,12 +90,12 @@ You can also make `sed` behave like other commands (i.e. `grep`, `head`, and `ta
 
 For the purposes of cs100, we will confine the scope of our usage of `sed` to the following 2 categories:
 
-####1. Substitution
-####2. Emulation
+####1. [Substitution](#Substitution)
+####2. [Emulation](#Emulation)
 
-The most widely used and most popular use of `sed` is **subsitution**.
+We will begin with the most widely used and most popular use of `sed`, **subsitution**.
 
-#####Substitution
+#####1. <a name="Substitution"></a>Substitution
 The bread and butter of `sed`, the **s** command (s for substitution) 
 
 A simple example of `sed` substitution in action: 
@@ -162,7 +162,27 @@ sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm n
 changes, you must use output redirection to copy the modified input file into a new file and then put copy the contents of the new file back into the old input file. Lastly, you 
 would delete the file you created to do the file transformation (it is always considered good prectice to delete files you don&#39;t need).  
 
+Let&#39;s say a writer for the entertainment website Variety finished writing an article about the recent Sony Pictures hack. The writer gives their article to an editor and goes on their way.
+Upon reading over the writer&#39;s article the editor notices that instead of accusing North Korea of the reported hacks, they incorrectly gave South Korea the credit. The average editor would have
+to go in by hand and correct this issue amongst others, but this editor is special. This editor took a minor in computer science courses in college and remembers that there is a 
+quick and painless way for them to correct this pervasive error. The writer accesses the html code for the article webpage and copies it to a file in his computer called *draft1*.
+The editor opens a `sed` script file he wrote to delete repeated words in the articles he or she&#39;s responsible for and adds a new command to the file:
 
+```
+#sed script file *deletes repeated words and for this specific case will transform "SOuth Korea" to "North Korea"
+s/[a-zA-Z]* //2
+s/SOUTH KOREA/NORTH KOREA/g
+```
+
+To apply their sed script to the article, the editor uses the `-f` flag and the name of their sed script in place of a pattern or regular expression:
+```
+sed -f sedscript draft1 > draft2
+```
+
+and now "draft2" holds the edited Sony hack article.
+
+
+#####2. <a name="Emulation"></a>Emulation
 
 #### [Top](#Top)
 
