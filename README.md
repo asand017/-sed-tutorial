@@ -2,7 +2,7 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
-###1. [link](#What is *sed*?)
+###1. [What is *sed*?](#What is *sed*?)
 
 ###2. How Does it Work?
 
