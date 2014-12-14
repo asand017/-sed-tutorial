@@ -2,7 +2,7 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
-We will be learning about the `sed` bash command and the power it holds!
+We will be learning about the `sed` bash command!
 
 ## <a name="Top"></a>Top
 
@@ -169,9 +169,9 @@ quick and painless way for them to correct this pervasive error. The writer acce
 The editor opens a `sed` script file he wrote to delete repeated words in the articles he or she&#39;s responsible for and adds a new command to the file:
 
 ```
-#sed script file *deletes repeated words and for this specific case will transform "SOuth Korea" to "North Korea"
+#sed script file *deletes repeated words and for this specific case will transform "South Korea" to "North Korea"
 s/[a-zA-Z]* //2
-s/SOUTH KOREA/NORTH KOREA/g
+s/South Korea/North Korea/g
 ```
 
 To apply their sed script to the article, the editor uses the `-f` flag and the name of their sed script in place of a pattern or regular expression:
@@ -181,8 +181,54 @@ sed -f sedscript draft1 > draft2
 
 and now "draft2" holds the edited Sony hack article.
 
-
 #####2. <a name="Emulation"></a>Emulation
+As mentioned eariler, `sed` is especially unique in that it can imitate other fellow bash commands (although it would probably be more straight forward to just use the premade bash commands
+sed is copying). We will look at 2 commands that `sed` can easily imitate: `grep` and `head`.
+
+1. `grep`
+
+The `grep` bash command searches a file for specific text. Like `sed`, `grep` takes in a search pattern to compare input to. Once `grep` finds a match, it prints the line with the matching text
+to standard output.
+
+In order for `sed` do what `grep` does, it will need two additional things: the "-n" option and the "p" command. (You can see a full list of the `sed` options and commands here)
+
+The "-n" turns off `sed`&#39;s printing unless requested with the "p" option, which duplicates the input.
+
+Say an employer wants to make sure "employee45@gmail.com" is included in a file called "workersemail" containing all the emails of their employees. Using `grep`, the employer could search
+for the email with, 
+
+```
+grep "employee45@gmail.com" workersemail
+```
+
+or using `sed`, he would search with,
+
+```
+sed -n "/employee45@gmail.com/p" workersemail
+```
+
+2. `head`
+
+The `head` bash command prints the first line of input to standard output.
+
+As explained with `grep`, the "p" `sed` command will duplicate all of the input passed into it, but if you only want to print the first line of the first ten lines of the input, you can 
+specify the line numbers you want printed back to the screen.
+
+The previously mentioned employer wants to employ a new email system that is sorted in alphabetical order by last name of each employee. The employer has just hired a Scott Adams and has
+assigned him with the employee email AdamsScott@gmail.com. The employer insists on alphabetizing the email list by name so he must anticipate where on the list he will need to insert this new
+email. Instead of opening the file and looking through all the emails, he wants to screen a small amount of emails at any one time. To do this he can use `head` to print the first ten emails
+in the list,
+
+```
+head workersemail
+```
+
+or with `sed`,
+
+```
+sed -n '1,10 p' workersemail
+```
+
 
 #### [Top](#Top)
 
