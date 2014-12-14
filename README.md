@@ -54,7 +54,7 @@ sed options ... [ script ] [ inputfile ... ]
 
 * *inputfile* refers to the filename of the file you want to modify
 
-In practice, `sed` is not completely strict in how it can be called.
+In practice, `sed` is not entirely strict in how it can be called.
 
 For example, say you had a file containing a list of subscriber email addresses (each email addresson its own line) and you accidently got all of
  the domain names wrong. One way you could quickly and painlessly resolve this dilemma would be to pass your old email list into the `sed` command as so: 
