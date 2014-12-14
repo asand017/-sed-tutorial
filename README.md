@@ -243,9 +243,11 @@ programmer and have `sed` do it for you.
 #### [Top](#Top)
 
 [`sed`][sed] man page
+
 [`grep`][grep] man page
+
 [`head`][head] man page
 
-[sed]: linux.die.net/man/1/sed
-[grep]: linux.die.net/man/1/grep
-[head]: linux.die.net/man/1/head
+[sed]: http://linux.die.net/man/1/sed
+[grep]: http://linux.die.net/man/1/grep
+[head]: http://linux.die.net/man/1/head
