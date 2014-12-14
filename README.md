@@ -23,7 +23,7 @@ Today you will be learning about the `sed` bash command!
 
 `sed` (standing for {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
 
-##### [Top](#Top)
+##### [Back to Top](#Top)
 
 ### <a name="How Does it Work?"></a>How Does it Work?
 `sed` works by maintaining two data buffers: the active **pattern**
@@ -40,7 +40,7 @@ back in. Another cycle then begins for the next line of text in the file.
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
 
-##### [Top](#Top)
+##### [Back to Top](#Top)
 
 ### <a name="What Does it Look Like?"></a>What Does it Look Like?
 The general format of a call to the `sed` command is as follows:
@@ -84,7 +84,7 @@ sed 's/aol.com/gmail.com/'
 
 `sed` will become "hungup" and will wait for input from standard input (manually entered input from the user), which is not very useful in practice.
 
-#### [Top](#Top)
+#### [Back to Top](#Top)
 
 ### <a name="What Can We Do With it?"></a>What Can We Do With it?
 Despite what the average programmer might suggest, `sed` can be used for more than just simple text transformations. With regular expressions, `sed` has potential to handle very complex transformations.
@@ -222,7 +222,7 @@ sed -n "/employee45@gmail.com/p" workersemail
 If nothing is returned, then the employer knows "employee45@gmail.com" has not yet been added to the email list. If the email is echoed back to the screen, then the email has already been included in
 the file.
 
-*`head`
+* `head`
 
 The `head` bash command prints the first 10 lines of input to standard output.
 
@@ -247,7 +247,7 @@ sed -n '1,10 p' workersemail
 
 Now the employer doesn&#39;t have to strain his eyes to see where to place the new email address.
 
-#### [Top](#Top)
+#### [Back to Top](#Top)
 
 ### <a name="Why Should We Ever Use it?"></a>Why Should We Ever Use it?
 A good programmer is defined by how he or she spends their time, by how much they value their time, and by how efficiently they use their time. Good programmers don&#39;t waste time on tedious coding that
@@ -257,7 +257,7 @@ So when you find yourself in a position where you&#39;ve forgotten to put a set 
 the name of a project in your project README, you&#39;ll have a choice to make: be a bad programmer and waste valuable time making the corrections yourself or be a good 
 programmer and have `sed` do it for you.
 
-#### [Top](#Top)
+#### [Back to Top](#Top)
 
 Go to the [`sed`][sed] man page for a full list of the `sed` options and commands.
 
