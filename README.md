@@ -3,7 +3,7 @@
 Welcome to cs100! :smiley: :trollface: :fearful:
 
 ![Image of Yaktocat]
-(https://octodex.github.com/images/yaktocat.png)
+(http://pixabay.com/get/5af74f65eb7e7253bd20/1418518821/tux-293844_1280.png?direct)
 
 We will be learning about the `sed` bash command!
 
@@ -17,7 +17,7 @@ We will be learning about the `sed` bash command!
 
 ###4. [What Can We Do With it?](#What Can We Do With it?)
 
-###5. [Why Should We Ever Use *sed*?](#Why Should We Ever Use *sed*?)
+###5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
 
 ### <a name="What is *sed*?"></a>What is *sed*?
 
@@ -235,7 +235,7 @@ sed -n '1,10 p' workersemail
 
 #### [Top](#Top)
 
-### <a name="Why Should We Ever Use *sed*?"></a>Why Should We Ever Use *sed*?
+### <a name="Why Should We Ever Use it?"></a>Why Should We Ever Use it?
 A good programmer is defined by how the spend time, how much they value time, and how efficiently they use their time. Good programmers don&#39;t waste time on tedious coding that
 a program or a command can accomplish in a fraction of the time he or she would need to do it by hand. `sed` and commands like `sed` exist to encourage a "good programmer" mentality.
 
