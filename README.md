@@ -211,8 +211,8 @@ sed -n "/employee45@gmail.com/p" workersemail
 
 The `head` bash command prints the first line of input to standard output.
 
-As explained with `grep`, the "p" `sed` command will duplicate all of the input passed into it, but if you only want to print the first line of the first ten lines of the input, you can 
-specify the line numbers you want printed back to the screen.
+As explained with `grep`, the "p" `sed` command will duplicate all of the input passed into it, but if you only want to print the first ten lines of the input, you can specify the line 
+numbers you want printed back to the screen.
 
 The previously mentioned employer wants to employ a new email system that is sorted in alphabetical order by last name of each employee. The employer has just hired a Scott Adams and has
 assigned him with the employee email AdamsScott@gmail.com. The employer insists on alphabetizing the email list by name so he must anticipate where on the list he will need to insert this new
