@@ -2,6 +2,9 @@
 
 Welcome to cs100! :smiley: :trollface: :fearful:
 
+![Image of Yaktocat]
+(https://octodox.github.com/images/yaktocat.png)
+
 We will be learning about the `sed` bash command!
 
 ## <a name="Top"></a>Top
