@@ -245,6 +245,10 @@ programmer and have `sed` do it for you.
 
 #### [Top](#Top)
 
+Happy Hacking!
+
+![Alt Text](http://i.imgur.com/Mvzj4Mc.gif)
+
 [`sed`][sed] man page
 
 [`grep`][grep] man page
