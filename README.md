@@ -88,7 +88,7 @@ sed 's/aol.com/gmail.com/'
 
 ### <a name="What Can We Do With it?"></a>What Can We Do With it?
 Despite what the average programmer might suggest, `sed` can be used for more than just simple text transformations. With regular expressions, `sed` has potential to handle very complex transformations.
-You can build an entire program using only `sed` (i.e. a script that capitalizes all the vowels in a text file and so forth). You can also make `sed` behave like other commands (i.e. `grep` and `head`). 
+You can build an entire program using only `sed` (<i.e./> a script that capitalizes all the vowels in a text file and so forth). You can also make `sed` behave like other commands (i.e. `grep` and `head`). 
 
 For the purposes of cs100, we will confine the scope of our usage of `sed` to the following 2 categories:
 
