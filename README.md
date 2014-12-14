@@ -3,7 +3,7 @@
 Welcome to cs100! :smiley: :trollface: :fearful:
 
 ![Image of Yaktocat]
-(https://octodox.github.com/images/yaktocat.png)
+(https://octodex.github.com/images/yaktocat.png)
 
 We will be learning about the `sed` bash command!
 
