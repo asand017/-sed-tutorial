@@ -26,15 +26,23 @@ Today you will be learning about the `sed` bash command!
 ##### [Back to Top](#Top)
 
 ### <a name="How Does it Work?"></a>How Does it Work?
+
 `sed` works by maintaining two data buffers (temporary containers): the active **pattern**
 space and the auxiliary **hold** space. Both begin empty.
 
-`sed` operates by going line by line of the input source and placing each line 
-into the **pattern** space after removing any leading newline characters.
-
-In other words, if we had a file containing,
+For our purposes, let&#39;s look at the following `sed` command:
 
 ```
+sed 's/Hello/Goodbye/' testfile
+```
+
+`sed` operates by going line by line of the testfile and placing each line 
+into the **pattern** space after removing any leading newline characters.
+
+So if we had a file containing,
+
+```
+#filename: testfile
 Hello World!
 This is a test file
 Computer Science is fun!
@@ -44,12 +52,20 @@ Computer Science is fun!
  
 Once the text is in the pattern space, the provided commands are executed.
 
+Now that "Hello World!" is in the pattern space, the *'s/Hello/Goodbye'* command is applied to it.
 
 A command will only execute if the text in the pattern space qualifies for
-the command, or matches the pattern. When the end of the line is reached, 
-the pattern space is output to the output stream and has its newline replaced
-back in. Another cycle then begins for the next line of text in the file.
+the command, or matches the pattern. 
 
+Since "Hello" was present in the pattern space, substitution command will swap out "Hello" with "Goodbye."
+
+When the end of the line is reached, the pattern space is output to the output stream (standard output) and has its newline replaced back in. 
+
+After all the commands have been executed on the pattern space, the newline is added back to the string. So the output from the first line will be "Hello World!\n."
+
+Another cycle then begins for the next line of text in the file.
+
+Now the string "This is a test file" is placed into the pattern space.
 
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
@@ -110,7 +126,7 @@ For the purposes of cs100, we will confine the scope of our usage of `sed` to th
 ####2. [Emulation](#Emulation)
 
 #####1. <a name="Substitution"></a>Substitution
-The meat and potatoes of `sed` is the **s** command (s for substitution) 
+The meat and potatoes of `sed` is the `s` command (s for substitution) 
 
 Here is a simple example of `sed` substitution in action: 
 
@@ -128,13 +144,18 @@ There are four parts to the substitution command:
 
 4. **gmail.com** &#8594; Replacement String
 
-**1.** The command character (in this case **s** for substitution) must go on the left side of the first
+*1.* The command character (in this case **s** for substitution) must go on the left side of the first
 delimiter.
 
-**2.** The character after **s** is called a delimiter. The delimiters are needed to parse the
+*2.* The character after **s** is called a delimiter. The delimiters are needed to parse the
 command, to seperate the substitution command from the search pattern and seperate the search pattern from
 the replacement string. In the case of the above example, the delimiter is a slash, but the delimiter can 
 be any character you want as long as there are three of them:
+
+```
+echo aol.com | sed 's/aol.com/gmail.com/'
+```
+is equivalent to
 
 ```
 echo aol.com | sed 's_aol.com_gmail.com_'    
@@ -158,9 +179,9 @@ Each of these instances will have the same output as the original example.
 
 A missing delimiter while result in a "Unterminated 's' command" error.
 
-**3.** The string you want to search for (i.e. "aol.com" the search pattern) is on the left side of the delimiter sequence. 
+*3.* The string you want to search for (i.e. "aol.com" the search pattern) is on the left side of the delimiter sequence. 
 
-**4.** The string you want to replace the search pattern with (i.e. "gmail.com") goes on the right side.
+*4.* The string you want to replace the search pattern with (i.e. "gmail.com") goes on the right side.
 
 Now let&#39;s look at a couple real world instance where substitution would be useful.
 
