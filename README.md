@@ -7,7 +7,7 @@ Welcome to cs100! :smiley: :trollface: :fearful:
 
 Today you will be learning about the `sed` bash command!
 
-## <a name="Top"></a>Top
+### <a name="Top"></a>Top
 
 1. [What is *sed*?](#What is *sed*?)
 
