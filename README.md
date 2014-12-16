@@ -26,16 +26,30 @@ Today you will be learning about the `sed` bash command!
 ##### [Back to Top](#Top)
 
 ### <a name="How Does it Work?"></a>How Does it Work?
-`sed` works by maintaining two data buffers: the active **pattern**
+`sed` works by maintaining two data buffers (temporary containers): the active **pattern**
 space and the auxiliary **hold** space. Both begin empty.
 
 `sed` operates by going line by line of the input source and placing each line 
-into the **pattern** space after removing any leading newline characters. 
+into the **pattern** space after removing any leading newline characters.
+
+In other words, if we had a file containing,
+
+```
+Hello World!
+This is a test file
+Computer Science is fun!
+```
+
+`sed` would take the string "Hello World!\n", remove the newline character, and place the string into the pattern space.
+ 
 Once the text is in the pattern space, the provided commands are executed.
+
+
 A command will only execute if the text in the pattern space qualifies for
 the command, or matches the pattern. When the end of the line is reached, 
 the pattern space is output to the output stream and has its newline replaced
 back in. Another cycle then begins for the next line of text in the file.
+
 
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
