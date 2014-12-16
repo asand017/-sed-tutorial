@@ -9,15 +9,15 @@ Today you will be learning about the `sed` bash command!
 
 ## <a name="Top"></a>Top
 
-###1. [What is *sed*?](#What is *sed*?)
+1. [What is *sed*?](#What is *sed*?)
 
-###2. [How Does it Work?](#How Does it Work?)
+2. [How Does it Work?](#How Does it Work?)
 
-###3. [What Does it Look Like?](#What Does it Look Like?)
+3. [What Does it Look Like?](#What Does it Look Like?)
 
-###4. [What Can We Do With it?](#What Can We Do With it?)
+4. [What Can We Do With it?](#What Can We Do With it?)
 
-###5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
+5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
 
 ### <a name="What is *sed*?"></a>What is *sed*?
 
