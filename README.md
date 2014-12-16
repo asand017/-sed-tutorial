@@ -3,7 +3,7 @@
 Welcome to cs100! :smiley: :trollface: :fearful:
 
 ![Image of Yaktocat]
-(http://pixabay.com/get/5af74f65eb7e7253bd20/1418518821/tux-293844_1280.png?direct)
+(http://pixabay.com/static/uploads/photo/2013/07/13/12/31/penguin-159784_640.png)
 
 Today you will be learning about the `sed` bash command!
 
