@@ -153,7 +153,7 @@ You would then take this file and pass it into the `sed` command.
 sed -i -f sed.sh numbers
 ```
 
-Each script expression in "sed.sh" will make a pass through "numbers" and make its own specific changes. So when the above command finishes, every digit in the file will be converted to its English name.
+Each script expression in "sed.sh" will make a pass through "numbers" and make its specific changes. So when the above command finishes, every digit in the file will be converted to its English name.
 
 #### [Back to Top](#Top)
 
