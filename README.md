@@ -71,17 +71,16 @@ The previous example did not actually need to use the hold space because there w
 Say we want to capture the line before a line that matches a `sed` pattern. The command,
 
 ```
-sed -n '/regex/{x;p;x}; h'
+sed -n '/regex/{x;1!p;x}; h'
 ```
 
 does just that.
 
 Before you can read this expression, there are a few things you should know.
 
-The `-n` flag turns off `sed`&#39;s printing, unless specified some other command, like `p`. `p` will print the pattern space to standard output. `regex` is simply a stand-in for a regular expression, a search pattern (more on this later). The most important things though are `x` and `h`. `x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
+The `-n` flag turns off `sed`&#39;s printing, unless specified some other command, like `p`. `p` will print the pattern space to standard output and `regex` is simply a stand-in for a regular expression, a search pattern (more on this later). The most important things though are `x` and `h`. `x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
 
-
-
+So the above `sed` command behaves as the previous example right up until the point the string in the pattern space matches the regular expression. The `h` command at the end of the script forwards each line into the hold space. When ever a line matches the regex expression, `x` swaps the hold space and the pattern space. So the lines that do not match the regular expression, are available to be output to the output stream and the matching string is temporarily stored. The "1!" in front of the `p` signals `p` to only print all lines that are not the first line. The second `x` swaps the hold space and the pattern space again so that the script can carry on as normal.  
 
 ##### [Back to Top](#Top)
 
