@@ -90,11 +90,13 @@ The general format of a call to the `sed` command is as follows:
 sed options ... [ script ] [ inputfile ... ]
 ```
 
-* *options* refers to a passed in flag (i.e. **-n** or **-i**) 
+* *options* refers to a passed in flag (i.e. **-n** or **-i**)  
 
 * *script* refers to a pattern that will be used to filter the input/a regular expression
 
 * *inputfile* refers to the filename of the file you want to modify
+
+*For a full list of the `sed` options visit the [`sed`][sed] man page.*
 
 In practice, `sed` is not entirely strict in how it can be called.
 
@@ -201,12 +203,10 @@ A bad programmer would waste their time manually changing each incorrect year nu
 you can complete this task in a matter of seconds. All you&#39;ll type is a one line into your terminal:
 
 ```
-sed 's/2012/2014/g' README.md > newREADME.md; cat newREADME.md > README.md; rm newREADME.md
+sed -i 's/2012/2014/g' README.md 
 ```
 
-**NOTE:** It is important to keep in mind that `sed` will not replace the text in the input file on its own. `sed` will print the modified text to stdout. So inorder to capture the 
-changes, you must use output redirection to copy the modified input file into a new file and then copy the contents of that new file back into the old file. Lastly, you 
-would delete the file you created to do the file transformation (it is always considered good prectice to delete files you don&#39;t need).  
+**NOTE:** The `-i` flag makes `sed` perform in-text editing. Or in other words, it reads the file, applies the commands, and places the results back into the original file.
 
 Sure, you could argue that the number of year numbers you would have to change wouldn&#39;t be SO big that you couldn&#39;t correct them by hand relatively quickly. But, I would say this is
 beside the point. The point is that while you are searching through your README looking for the incorrect year, you could be doing something more worthy of your attention. 
@@ -238,6 +238,22 @@ sed -f sedscript draft1 > draft2
 ```
 
 and now "draft2" holds the edited Sony hack article.
+
+The president of the UCR ACM chapter has the 100 new members all enter their phone numbers in the his laptop. Everyone enters their number in the form of "##########," which is not easy on the eyes. So after the president gets back home and sees that no one distinguished their area code from the rest of the seven digit phone number, he decides to run a `sed` script to place set of parentheses around the first 3 digits of every phone number.
+
+Since there is no way for to anticipate the exact three numbers for each phone number, the president will have to construct a **regular expression** to get the job done. Regular expressions themselves are worthy of their own tutorial, so we will not delve too deep into the intricacies of creating one, but we will use them to demonstrate `sed`&#39;s power. For a detailed introduction to regular expressions, please visit [this][regex] tutorial.
+
+Now, the president needs to capture the first three digits of each phone number. So this will require a `^`, which in a regular expression dictates that the match must begin at the start of the line, a 
+`[[:digit:]]`, which translates to the first character needing to be a digit, and lastily a `&`, which is a variable that represents the pattern that was matched.
+
+Since the president wants to capture the first three digit of each line, he will need three `[[:digit:]]`&#39;s and since he needs to place parentheses around those first three digits, he will simply put parentheses around the `&` after the second delimiter.
+
+The `sed` is written as follows:
+
+```
+sed -i 's/^[[:digit:]][[:digit:]][[:digit:]]/(&)/' phonelist
+```
+Now each phone number in the ACM phone list will have a parentheses around their three-digit area code.
 
 #####2. <a name="Emulation"></a>Emulation
 As mentioned eariler, `sed` is especially unique in that it can imitate other bash commands (although it would probably be more straight forward to just use the premade bash commands
@@ -294,8 +310,6 @@ sed -n '1,10 p' workersemail
 Now the employer doesn&#39;t have to strain his eyes to see where to place the new email address.
 
 #### [Back to Top](#Top)
-
-Go to the [`sed`][sed] man page for a full list of the `sed` options and commands.
 
 Go to the [`grep`][grep] man page to learn more about `grep`
 
