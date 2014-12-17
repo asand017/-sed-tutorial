@@ -92,31 +92,32 @@ sed options ... [ script ] [ inputfile ... ]
 
 * *options* refers to a passed in flag (i.e. **-n** or **-i**)  
 
-* *script* refers to a pattern that will be used to filter the input/a regular expression
+* *script* refers to a pattern that will be used to filter the input/a regular expression. This is also where you specify which `sed` commands you wish to use (i.e `s` or `p` or `g`)
 
 * *inputfile* refers to the filename of the file you want to modify
 
-*For a full list of the `sed` options visit the [`sed`][sed] man page.*
+*For a full list of the `sed` options and commands visit the [`sed`][sed] man page.*
 
-In practice, `sed` is not entirely strict in how it can be called.
+`sed` can be called in various ways. 
 
 For example, say you had a file containing a list of subscriber email addresses (each email addresson its own line) and you accidently got all of
  the domain names wrong. One way you could quickly and painlessly resolve this dilemma would be to pass your old email list into the `sed` command as so: 
+
 ```
 sed 's/aol.com/gmail.com/' oldlist > newlist
 ```
 
 or
 ```
-sed s/aol.com/gmail.com/ oldlist > newlist
+sed -i 's/aol.com/gmail.com/' oldlist      #the '-i' flag modifies the passed in file and puts the newly modified file back into the old one
 ```
 
 which replaces the first occurence of "aol.com" on each line of the input source with "gmail.com".
 
-**NOTE:** `sed` can be written with or without single quotations. Although, it is better practice to always include them. It makes recognizing which instructions belong to `sed`
-and which instructions belong to another command easier.
+**NOTE:** `sed` can be written with or without single quotations. Although, it is better practice to always include them.
 
 Alternatively, you can accomplish the same goal by piping the old email list to `sed`: 
+
 ```
 cat oldlist | sed 's/aol.com/gmail.com/' > newlist
 ```
@@ -126,7 +127,7 @@ If `sed` is called without a source of input:
 sed 's/aol.com/gmail.com/'
 ```
 
-`sed` will become "hungup" and will wait for input from standard input (input manually entered input from the user).
+`sed` will become "hungup" and will wait for input from standard input (input manually entered input from the user) where `sed` will execute its commands as the user passes in new lines for it to anaylze.
 
 #### [Back to Top](#Top)
 
@@ -206,7 +207,13 @@ you can complete this task in a matter of seconds. All you&#39;ll type is a one 
 sed -i 's/2012/2014/g' README.md 
 ```
 
-**NOTE:** The `-i` flag makes `sed` perform in-text editing. Or in other words, it reads the file, applies the commands, and places the results back into the original file.
+**NOTE:** The `-i` flag makes `sed` perform in-text editing. Or in other words, it reads the file, applies the commands, and places the results back into the original file. **Using the `-i` flag is not reversible so you should consider making a backup of a file before changing it.** In fact, if you add a file extension to `-i` 
+
+```
+sed -i.backup 's/2012/2014/g' README.md
+```
+
+`sed` will create a copy of the "README.md" named "README.md.backup" before the changes are made.
 
 Sure, you could argue that the number of year numbers you would have to change wouldn&#39;t be SO big that you couldn&#39;t correct them by hand relatively quickly. But, I would say this is
 beside the point. The point is that while you are searching through your README looking for the incorrect year, you could be doing something more worthy of your attention. 
