@@ -293,7 +293,7 @@ As explained with `grep`, the "p" `sed` command will duplicate all of the input 
 numbers you want printed back to the screen.
 
 The previously mentioned secretary is tasked with creating a new list of emails that is sorted in alphabetical order by the last name of each employee. Google has just assigned a Scott Adams to the office and has the employee email, "adamsscott@gmail.com". The secretary insists on alphabetizing the email list by hand so they must anticipate where on the list they will need to insert this new
-email. Instead of opening the file and looking through all the emails, they only want to look at the beginning of the list since they know there hasn$#39;t been many new additions to the office with a last name beginning
+email. Instead of opening the file and looking through all the emails, they only want to look at the beginning of the list since they know there hasn&#39;t been many new additions to the office with a last name beginning
 with "A". So they screen a small amount of emails one at a time. To do this they can use `head` to print the first ten emails in the list,
 
 ```
