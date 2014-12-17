@@ -243,7 +243,7 @@ The president of the UCR ACM chapter has the 100 new members all enter their pho
 
 Since there is no way for to anticipate the exact three numbers for each phone number, the president will have to construct a **regular expression** to get the job done. Regular expressions themselves are worthy of their own tutorial, so we will not delve too deep into the intricacies of creating one, but we will use them to demonstrate `sed`&#39;s power. For a detailed introduction to regular expressions, please visit [this][regex] tutorial.
 
-Now, the president needs to capture the first three digits of each phone number. So this will require a `^`, which in a regular expression dictates that the match must begin at the start of the line, a 
+The president needs to capture the first three digits of each phone number. So this will require a `^`, which in a regular expression dictates that the match must begin at the start of the line, a 
 `[[:digit:]]`, which translates to the first character needing to be a digit, and lastily a `&`, which is a variable that represents the pattern that was matched.
 
 Since the president wants to capture the first three digit of each line, he will need three `[[:digit:]]`&#39;s and since he needs to place parentheses around those first three digits, he will simply put parentheses around the `&` after the second delimiter.
@@ -256,8 +256,7 @@ sed -i 's/^[[:digit:]][[:digit:]][[:digit:]]/(&)/' phonelist
 Now each phone number in the ACM phone list will have a parentheses around their three-digit area code.
 
 #####2. <a name="Emulation"></a>Emulation
-As mentioned eariler, `sed` is especially unique in that it can imitate other bash commands (although it would probably be more straight forward to just use the premade bash commands
-sed is copying). We will look at 2 commands that `sed` can easily imitate: `grep` and `head`.
+`sed` can imitate other bash commands (although it would probably be more straight forward to just use the premade bash commands sed is copying). We will look at 2 commands that `sed` can easily imitate: `grep` and `head`.
 
 * `grep`
 
@@ -311,15 +310,7 @@ Now the employer doesn&#39;t have to strain his eyes to see where to place the n
 
 #### [Back to Top](#Top)
 
-Go to the [`grep`][grep] man page to learn more about `grep`
-
-Go to the [`head`][head] man page to learn more about `head`
-
-Go [here][regex] to learn how to write regular expressions
-
 Happy Hacking!
 
 [regex]: http://www.regular-expressions.info
 [sed]: http://linux.die.net/man/1/sed
-[grep]: http://linux.die.net/man/1/grep
-[head]: http://linux.die.net/man/1/head
