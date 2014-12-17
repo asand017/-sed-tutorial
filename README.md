@@ -48,7 +48,7 @@ This is a test file
 Computer Science is fun!
 ```
 
-*`sed` would take the string "Hello World!\n", remove the newline character, and place the string into the pattern space.
+* `sed` would take the string "Hello World!\n", remove the newline character, and place the string into the pattern space.
 
 Once the text is in the pattern space, the provided commands are executed.
 
