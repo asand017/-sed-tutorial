@@ -297,16 +297,32 @@ email. Instead of opening the file and looking through all the emails, they only
 with "A". So they screen a small amount of emails one at a time. To do this they can use `head` to print the first ten emails in the list,
 
 ```
-head workersemail
+head elist
 ```
 
 or with `sed`,
 
 ```
-sed -n '1,10 p' workersemail
+sed -n '1,10 p' elist
 ```
 
 Now the secretary doesn&#39;t have to strain their eyes to see where to place the new email address.
+
+The above `sed` command also demonstrates `sed`&#39;s ability to set a range to limit the command on. In the case of the above example `1,10` specifies that the command only be applied to lines 1 through 10. If only a single number limit is included,
+
+```
+sed -n '5 p' elist
+```
+
+only the fifth line of the input file will be output. 
+
+Additionally, if you include `!` with a line range, you will do the opposite of the line range. So the command,
+
+```
+sed -n '5! p' elist
+```
+
+will output every line except for the fifth line of the input file.
 
 #### [Back to Top](#Top)
 
