@@ -314,7 +314,7 @@ The above `sed` command also demonstrates `sed`&#39;s ability to set a range to 
 sed -n '5 p' elist
 ```
 
-only the fifth line of the input file will be output. 
+only that *nth* line of the input file will be output. In this case, only the fifth line will be output. 
 
 Additionally, if you include `!` with a line range, you will do the opposite of the line range. So the command,
 
