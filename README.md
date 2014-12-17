@@ -76,21 +76,24 @@ sed -n '/regex/{x;1!p;x}; h'
 
 does just that.
 
-Before you can read this expression, there are a few things you should know.
+Before you can see what this expression is doing, there are a few things you should know.
 
 The `-n` flag turns off `sed`&#39;s printing, unless specified some other command, like `p`. `p` will print the pattern space to standard output and `regex` is simply a stand-in for a regular expression, a search pattern (more on this later). The most important things though are `x` and `h`. `x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
 
-So the above `sed` command behaves as the previous example right up until the point the string in the pattern space matches the regular expression. The `h` command at the end of the script forwards each line into the hold space. When ever a line matches the regex expression, `x` swaps the hold space and the pattern space. So the lines that do not match the regular expression, are available to be output to the output stream and the matching string is temporarily stored. The "1!" in front of the `p` signals `p` to only print all lines that are not the first line. The second `x` swaps the hold space and the pattern space again so that the script can carry on as normal.  
+So the above `sed` command behaves as the previous example right up until the point the string in the pattern space matches the regular expression. The `h` command at the end of the script forwards each line into the hold space. When ever a line matches the regex expression, `x` swaps the hold space and the pattern space. So the lines that do not match the regular expression, are available to be output to the output stream and the matching string is temporarily stored. The `p` prints the current pattern space, which currently contains the line before the matching line. The second `x` swaps the hold space and the pattern space again so that the script can carry on as normal. 
+
+The "1!" in front of the `p` signals `p` to only print all lines that are not the first line.
 
 ##### [Back to Top](#Top)
 
 ### <a name="What Does it Look Like?"></a>What Does it Look Like?
-The general format of a call to the `sed` command is as follows:
+`sed` takes the general form,
+
 ```
 sed options ... [ script ] [ inputfile ... ]
 ```
 
-* *options* refers to a passed in flag (i.e. **-n** or **-i**)  
+* *options* refers to a passed in flag (i.e. `-n` or `-i`)  
 
 * *script* refers to a pattern that will be used to filter the input/a regular expression. This is also where you specify which `sed` commands you wish to use (i.e `s` or `p` or `g`)
 
