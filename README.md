@@ -30,15 +30,18 @@ Today you will be learning about the `sed` bash command!
 `sed` works by maintaining two data buffers (temporary containers): the active **pattern**
 space and the auxiliary **hold** space. Both begin empty.
 
+<blockquote>
 For our purposes, let&#39;s look at the following `sed` command:
 
 ```
 sed 's/Hello/Goodbye/' testfile
 ```
+</blockquote>
 
 `sed` operates by going line by line of the testfile and placing each line 
 into the **pattern** space after removing any leading newline characters.
 
+<blockquote>
 So if we had a file containing,
 
 ```
@@ -49,23 +52,32 @@ Computer Science is fun!
 ```
 
 `sed` would take the string "Hello World!\n", remove the newline character, and place the string into the pattern space.
- 
+</blockquote> 
+
 Once the text is in the pattern space, the provided commands are executed.
 
-Now that "Hello World!" is in the pattern space, the *'s/Hello/Goodbye'* command is applied to it.
+<blockquote>
+Now that "Hello World!" is in the pattern space, the `'s/Hello/Goodbye/'` command is applied to it.
+</blockquote>
 
 A command will only execute if the text in the pattern space qualifies for
 the command, or matches the pattern. 
 
+<blockquote>
 Since "Hello" was present in the pattern space, substitution command will swap out "Hello" with "Goodbye."
+</blockquote>
 
 When the end of the line is reached, the pattern space is output to the output stream (standard output) and has its newline replaced back in. 
 
-After all the commands have been executed on the pattern space, the newline is added back to the string. So the output from the first line will be "Hello World!\n."
+<blockquote>
+After `'s/Hello/Goodbye/'` has been executed on the pattern space, the newline is added back to the string. So the output from the first line will be "Hello World!\n."
+</blockquote>
 
 Another cycle then begins for the next line of text in the file.
 
-Now the string "This is a test file" is placed into the pattern space.
+<blockquote>
+Next, the string "This is a test file\n" is placed into the pattern space. This time however, "Hello" is not present, so `'s/Hello/Goodbye/'` does not execute, and "This is a test file\n" is simply output to the output stream. The same will occur for the final string.
+</blockquote>
 
 The **pattern** space is deleted between any two cycles; however, the 
 **hold** space maintains its data throughout the process.
