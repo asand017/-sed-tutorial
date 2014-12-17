@@ -17,8 +17,6 @@ Today you will be learning about the `sed` bash command!
 
 4. [What Can We Do With it?](#What Can We Do With it?)
 
-5. [Why Should We Ever Use it?](#Why Should We Ever Use it?)
-
 ### <a name="What is *sed*?"></a>What is *sed*?
 
 `sed` (standing for {**s**}tream {**ed**}itor) is a quick and efficient way of changing the text inside of a file without having to go in and change things yourself.
@@ -48,7 +46,7 @@ This is a test file
 Computer Science is fun!
 ```
 
-* `sed` would take the string "Hello World!\n", remove the newline character, and place the string into the pattern space.
+* `sed` would take the string "Hello World!\n," remove the newline character, and place the string into the pattern space.
 
 Once the text is in the pattern space, the provided commands are executed.
 
@@ -283,16 +281,6 @@ Now the employer doesn&#39;t have to strain his eyes to see where to place the n
 
 #### [Back to Top](#Top)
 
-### <a name="Why Should We Ever Use it?"></a>Why Should We Ever Use it?
-A good programmer is defined by how he or she spends their time, by how much they value their time, and by how efficiently they use their time. Good programmers don&#39;t waste time on tedious coding that
-a program or a simple bash command could accomplish in a fraction of the time he or she would need to do it by hand. `sed` and commands like `sed` exist to encourage this "good programmer" mentality.
-
-So when you find yourself in a position where you&#39;ve forgotten to put a set of () around a recurring conditional statenment in a cpp file or you want to change
-the name of a project in your project README, you&#39;ll have a choice to make: be a bad programmer and waste valuable time making the corrections yourself or be a good 
-programmer and have `sed` do it for you.
-
-#### [Back to Top](#Top)
-
 Go to the [`sed`][sed] man page for a full list of the `sed` options and commands.
 
 Go to the [`grep`][grep] man page to learn more about `grep`
@@ -302,8 +290,6 @@ Go to the [`head`][head] man page to learn more about `head`
 Go [here][regex] to learn how to write regular expressions
 
 Happy Hacking!
-
-![Alt Text](http://i.imgur.com/Mvzj4Mc.gif)
 
 [regex]: http://www.regular-expressions.info
 [sed]: http://linux.die.net/man/1/sed
