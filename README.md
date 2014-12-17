@@ -126,11 +126,35 @@ cat oldlist | sed 's/aol.com/gmail.com/' > newlist
 ```
 
 If `sed` is called without a source of input:
+
 ```
 sed 's/aol.com/gmail.com/'
 ```
 
 `sed` will become "hungup" and will wait for input from standard input (input manually entered input from the user) where `sed` will execute its commands as the user passes in new lines for it to anaylze.
+
+`sed` commands can also be listed together into a file called a **sed script** (which is used in place of an explicit regular expression or search pattern with the `-f` flag). A `sed` script would like,
+
+```
+# 'sed.sh' replaces digits with their English word
+s/0/zero/g
+s/1/one/g
+s/2/two/g
+s/3/three/g
+s/4/four/g
+s/5/five/g
+s/6/six/g
+s/7/seven/g
+s/8/eight/g
+s/9/nine/g
+``` 
+You would then take this file and pass it into the `sed` command.
+
+```
+sed -i -f sed.sh numbers
+```
+
+Each script expression in "sed.sh" will make a pass through "numbers" and make its own specific changes. So when the above command finishes, every digit in the file will be converted to its English name.
 
 #### [Back to Top](#Top)
 
