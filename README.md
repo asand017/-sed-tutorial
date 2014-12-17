@@ -58,14 +58,39 @@ A command will only execute if the text in the pattern space qualifies for the c
 
 When the end of the line is reached, the pattern space is output to the output stream (standard output) and has its newline replaced back in. 
 
-* After `'s/Hello/Goodbye/'` has been executed on the pattern space, the newline is added back to the string. So the output from the first line will be "Hello World!\n."
+* After `'s/Hello/Goodbye/'` has been applied the pattern space, the newline is added back to the string. So the output from the first line will be "Hello World!\n."
 
 Another cycle then begins for the next line of text in the file.
 
 * Next, the string "This is a test file\n" is placed into the pattern space. This time however, "Hello" is not present, so `'s/Hello/Goodbye/'` does not execute, and "This is a test file\n" is simply output to the output stream. The same will occur for the final string.
 
-The **pattern** space is deleted between any two cycles; however, the 
-**hold** space maintains its data throughout the process.
+The **pattern** space is emptied out between cycles; however, the **hold** space maintains its data throughout the process.
+
+The previous example did not actually need to use the hold space because there was no need for temporary storage. So let&#39;s look at different example that does use the hold space.
+
+Say we want to capture the line before a line that matches a `sed` pattern. The command,
+
+```
+sed -n '/regex/{x;p;x}; h'
+```
+
+does just that.
+
+Before you can read this expression, there are a few things you should learn.
+
+The `-n` flag turns off `sed`&#39;s printing, unless specified by `p`.
+
+`p` will print the pattern space to standard output.
+
+`regex` is a stand-in for a regular expression, a search pattern (more on this later).
+
+What is most important here though is `x` and `h`.
+
+`x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
+
+Now we can figure what the above command does.
+
+
 
 ##### [Back to Top](#Top)
 
