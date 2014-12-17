@@ -133,18 +133,18 @@ echo aol.com | sed 's/aol.com/gmail.com/'
 
 There are four parts to the substitution command:
 
-1. **s** &#8594; Substitute
+1. `s` &#8594; Substitute
 
-2. **/.../.../** &#8594; Delimiters
+2. `/.../.../` &#8594; Delimiters
 
-3. **aol.com** &#8594; Regular Expression Pattern/Search Pattern
+3. `aol.com` &#8594; Regular Expression Pattern/Search Pattern
 
-4. **gmail.com** &#8594; Replacement String
+4. `gmail.com` &#8594; Replacement String
 
-*1.* The command character (in this case **s** for substitution) must go on the left side of the first
+*1.* The command character (in this case `s` for substitution) must go on the left side of the first
 delimiter.
 
-*2.* The character after **s** is called a delimiter. The delimiters are needed to parse the
+*2.* The character after `s` is called a delimiter. The delimiters are needed to parse the
 command, to seperate the substitution command from the search pattern and seperate the search pattern from
 the replacement string. In the case of the above example, the delimiter is a slash, but the delimiter can 
 be any character you want as long as there are three of them:
