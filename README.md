@@ -33,9 +33,11 @@ space and the auxiliary **hold** space. Both begin empty.
 <blockquote>
 For our purposes, let&#39;s look at the following `sed` command:
 
+
 ```
 sed 's/Hello/Goodbye/' testfile
 ```
+
 </blockquote>
 
 `sed` operates by going line by line of the testfile and placing each line 
