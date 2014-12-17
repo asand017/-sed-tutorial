@@ -76,19 +76,10 @@ sed -n '/regex/{x;p;x}; h'
 
 does just that.
 
-Before you can read this expression, there are a few things you should learn.
+Before you can read this expression, there are a few things you should know.
 
-The `-n` flag turns off `sed`&#39;s printing, unless specified by `p`.
+The `-n` flag turns off `sed`&#39;s printing, unless specified some other command, like `p`. `p` will print the pattern space to standard output. `regex` is simply a stand-in for a regular expression, a search pattern (more on this later). The most important things though are `x` and `h`. `x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
 
-`p` will print the pattern space to standard output.
-
-`regex` is a stand-in for a regular expression, a search pattern (more on this later).
-
-What is most important here though is `x` and `h`.
-
-`x` swaps the pattern space and the hold space while `h` copies the current the pattern space to the hold space.
-
-Now we can figure what the above command does.
 
 
 
