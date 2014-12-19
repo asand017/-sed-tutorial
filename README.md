@@ -1,6 +1,3 @@
-![Image of Linux Penguin]
-(http://pixabay.com/static/uploads/photo/2013/07/13/12/31/penguin-159784_640.png)
-
 Today you will be learning about the `sed` bash command!
 
 ### <a name="Table of Contents"></a>Table of Contents
@@ -323,6 +320,9 @@ will output every line except for the fifth line of the input file.
 #### [Back to Top](#Top)
 
 Happy Hacking!
+
+![Image of Linux Penguin]
+(http://pixabay.com/static/uploads/photo/2013/07/13/12/31/penguin-159784_640.png)
 
 [regex]: http://www.regular-expressions.info
 [sed]: http://linux.die.net/man/1/sed
