@@ -1,7 +1,3 @@
-#SED TEXT MODIFIER
-
-Welcome to cs100! :smiley: :trollface: :fearful:
-
 ![Image of Linux Penguin]
 (http://pixabay.com/static/uploads/photo/2013/07/13/12/31/penguin-159784_640.png)
 
@@ -305,8 +301,6 @@ or with `sed`,
 ```
 sed -n '1,10 p' elist
 ```
-
-fghfhgf
 
 Now the secretary doesn&#39;t have to strain their eyes to see where to place the new email address.
 
