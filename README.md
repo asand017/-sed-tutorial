@@ -3,7 +3,7 @@
 
 Today you will be learning about the `sed` bash command!
 
-### <a name="Table of Contents"></a>Top
+### <a name="Table of Contents"></a>Table of Contents
 
 1. [What is *sed*?](#What is *sed*?)
 
