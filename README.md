@@ -243,14 +243,14 @@ With that in mind, let&#39;s move on to the next example.
 
 The president of the UCR ACM chapter has the 100 new members all enter their phone numbers in his laptop. Everyone enters their number in the form of "##########," which is not easy on the eyes. So after the president gets back home and sees that no one distinguished their area code from the rest of the seven digit phone number, he decides to run a `sed` script to place set of parentheses around the first 3 digits of every phone number.
 
-Since there is no way for him to anticipate the exact first three numbers for each phone number, the president will have to construct a **regular expression** to get the job done. Regular expressions themselves are worthy of their own tutorial, so we will not delve too deep into the intricacies of writing one, but we will use them to demonstrate `sed`&#39;s power. For a detailed introduction to regular expressions, please visit [this][regex] tutorial.
+Since there is no way for him to anticipate the exact first three numbers for each phone number, the president will have to write a **regular expression** to get the job done. Regular expressions themselves are worthy of their own tutorial, so we will not delve too deep into the intricacies of writing one, but we will use them to demonstrate `sed`&#39;s power. For a detailed introduction to regular expressions, please visit [this][regex] tutorial.
 
-The president needs to capture the first three digits of each phone number. So this will require a `^`, which in a regular expression dictates that the match must begin at the start of the line, a 
+The president&#39;s regular expression will require a `^`, which in a regular expression dictates that the match must begin at the start of the line, a 
 `[[:digit:]]`, which translates to the first character of a match needing to be a digit, and lastily a `&`, which is a variable that represents the pattern that was matched.
 
 Since the president wants to capture the first three digit of each line, he will need three `[[:digit:]]`&#39;s and since he needs to place parentheses around those first three digits, he will simply put parentheses around the `&` after the second delimiter.
 
-The `sed` is written as follows:
+The `sed` command he comes up with looks like this:
 
 ```
 sed -i 's/^[[:digit:]][[:digit:]][[:digit:]]/(&)/' phonelist
@@ -306,6 +306,8 @@ or with `sed`,
 sed -n '1,10 p' elist
 ```
 
+fghfhgf
+
 Now the secretary doesn&#39;t have to strain their eyes to see where to place the new email address.
 
 The above `sed` command also demonstrates `sed`&#39;s ability to set a range to limit the command on. In the case of the above example `1,10` specifies that the command only be applied to lines 1 through 10. If only a single number limit is included,
@@ -316,7 +318,7 @@ sed -n '5 p' elist
 
 only that *nth* line of the input file will be output. In this case, only the fifth line will be output. 
 
-Additionally, if you include `!` with a line range, you will do the opposite of the line range. So the command,
+Additionally, if you include `!` with a line range, you will capture the opposite of the line range. So the command,
 
 ```
 sed -n '5! p' elist
